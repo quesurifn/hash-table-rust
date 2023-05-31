@@ -111,6 +111,15 @@ mod tests {
         assert_eq!(table.get("hello2".to_string()).unwrap(), "world2");
         assert_eq!(table.get("hello3".to_string()).unwrap(), "world3");
     }
+
+    #[test]
+    fn test_remove() {
+        let mut table = HashTable::<String>::new();
+        table.insert("hello".to_string(), "world".to_string());
+        assert_eq!(table.get("hello".to_string()).unwrap(), "world");
+        table.remove("hello".to_string());
+        assert_eq!(table.get("hello".to_string()), None);
+    }
 }
 
 
