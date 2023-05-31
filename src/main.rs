@@ -80,6 +80,7 @@ impl<T> HashTable<T> {
                 return;
             }
         }
+        self.array_length -= 1;
     }
 }
 
